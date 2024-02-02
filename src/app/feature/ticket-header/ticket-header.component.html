@@ -1,0 +1,17 @@
+<div class="flex justify-between items-center mb-2">
+  <div class="flex items-center col-gap-3">
+    <div class="flex justify-center items-center arrow cursor-pointer">
+      <i class="pi pi-arrow-right"></i>
+    </div>
+    <p class="fw-medium fs-8">{{ "header.title" | translate }}</p>
+  </div>
+  <div>
+    <button
+      class="lang-btn"
+      (click)="langSwitch()"
+      pButton
+      label="{{ 'language' | translate }}"
+      icon="pi pi-file-edit"
+    ></button>
+  </div>
+</div>

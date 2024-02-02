@@ -1,0 +1,120 @@
+<p-table
+  [value]="ticketList"
+  dataKey="id"
+  [paginator]="true"
+  [rows]="rowsNumber"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="{{
+    'ticketsTable.tableInfo.paginateMessage'
+      | translate : { totalRecords: ticketList.length, rowsNumber: rowsNumber }
+  }}"
+  [rowsPerPageOptions]="[4, 10, 20]"
+  (onPage)="paginate($event)"
+  selectionMode="multiple"
+  [(selection)]="selectedTickets"
+  [metaKeySelection]="metaKeySelection"
+  [tableStyle]="{ 'min-width': '120rem' }"
+>
+  <ng-template pTemplate="caption">
+    <div class="flex items-center justify-between caption-screen">
+      <div class="flex items-center col-gap-2">
+        <p>{{ "ticketsTable.caption.purchase" | translate }}</p>
+        <div>
+          <span class="p-input-icon-right">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              placeholder="{{ 'ticketsTable.caption.search' | translate }}"
+            />
+          </span>
+        </div>
+        <div class="flex items-center justify-center caption-icon">
+          <i class="pi pi-sliders-h"></i>
+        </div>
+        <div class="flex items-center justify-center caption-icon">
+          <i class="pi pi-sort-alt"></i>
+        </div>
+      </div>
+      <div class="flex col-gap-4">
+        <div class="flex items-center col-gap-1">
+          <p-inputSwitch
+            inputId="metakey"
+            label="MetaKey"
+            [(ngModel)]="metaKeySelection"
+          ></p-inputSwitch>
+          <span>{{ "ticketsTable.caption.active" | translate }}</span>
+        </div>
+        <div>
+          <button
+            type="button"
+            pButton
+            label="{{ 'ticketsTable.caption.reserve' | translate }}"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>#</th>
+      <th>{{ "ticketsTable.header.user" | translate }}</th>
+      <th>
+        {{ "ticketsTable.header.ticketNo" | translate }}
+      </th>
+      <th pSortableColumn="ticketPrice">
+        {{ "ticketsTable.header.ticketPrice" | translate }}
+        <p-sortIcon field="ticketPrice"></p-sortIcon>
+      </th>
+      <th>
+        {{ "ticketsTable.header.cinema" | translate }}
+      </th>
+      <th>
+        {{ "ticketsTable.header.peopleNo" | translate }}
+      </th>
+      <th>
+        {{ "ticketsTable.header.purchaseNo" | translate }}
+      </th>
+      <th>
+        <div>{{ "ticketsTable.header.ticket" | translate }}</div>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-ticket let-rowIndex="rowIndex">
+    <tr [pSelectableRow]="ticket" [pSelectableRowIndex]="rowIndex">
+      <td>{{ ticket.id }}</td>
+      <td>
+        <div class="user-profile flex items-center col-gap-1">
+          <figure>
+            <img [src]="ticket.user.profileImage" alt="" />
+          </figure>
+          <div>
+            <p>{{ ticket.user.name }}</p>
+            <p class="small-p">{{ ticket.user.telNo }}</p>
+          </div>
+        </div>
+      </td>
+      <td>{{ ticket.ticketNo }}</td>
+      <td>{{ ticket.ticketPrice | currency : "$" : "symbol" : "1.0-0" }}</td>
+      <td pTooltip="{{ ticket.cinema }}" tooltipPosition="top">
+        {{ ticket.cinema }}
+      </td>
+      <td>{{ ticket.peopleNo }}</td>
+      <td>{{ ticket.purchaseNo }}</td>
+      <td>
+        <div class="ticket-info flex items-center justify-center col-gap-2">
+          <div class="flex items-center justify-center bag-icon">
+            <i class="pi pi-shopping-bag"></i>
+          </div>
+          <div>
+            <p>{{ ticket.ticket.fileName }}</p>
+            <p class="small-p">{{ ticket.ticket.filesize }}</p>
+          </div>
+          <div class="flex items-center justify-center download-icon">
+            <i class="pi pi-download"></i>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

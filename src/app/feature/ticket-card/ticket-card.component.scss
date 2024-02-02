@@ -1,0 +1,53 @@
+@use "base" as *;
+.card {
+  background: $voilet-100;
+  width: 100%;
+  border-radius: 1rem;
+  color: $white;
+  height: 26.4rem;
+  .empty {
+    width: 30px;
+    height: 1px;
+  }
+  .copy {
+    width: 50%;
+    background: $white;
+    border-radius: 8px;
+  }
+  .circle {
+    width: 25px;
+    height: 25px;
+    background: $white-lighter;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .circle-start {
+    inset-inline-start: calc(-2.5rem - 15px);
+  }
+  .circle-end {
+    inset-inline-end: calc(-2.5rem - 15px);
+  }
+  .line {
+    height: 1px;
+    border: 1px dashed $white-lighter;
+    position: absolute;
+    width: calc(100% + 30px);
+    top: 12.5px;
+    inset-inline-end: -15px;
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      padding: 2rem;
+      width: unset;
+      .copy {
+        width: 80%;
+      }
+      .separator {
+        .circle-start,
+        .circle-end {
+          display: none;
+        }
+      }
+    }
+  }
+}

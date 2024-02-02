@@ -1,0 +1,50 @@
+@use "base" as *;
+.p-button {
+  background: $voilet-100;
+  border: unset;
+  &:hover {
+    background: #8a74f9c0;
+  }
+  .p-button-label {
+    margin: 0px 0.5rem;
+  }
+}
+.lang-btn {
+  &.p-button {
+    background: #f9f9f9;
+    color: $black;
+    border: 1px solid $gray;
+    font-size: 1.4rem;
+    &:hover {
+      background: $white-light;
+    }
+  }
+  .pi {
+    color: $voilet-100;
+    font-size: 1.4rem;
+    margin: unset;
+  }
+}
+.share-btn {
+  &:hover {
+    .pi {
+      color: $black;
+      transition: all 1s;
+    }
+  }
+  &.p-button {
+    background: transparent;
+    color: $white;
+    border: 2px solid $white;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+      background: $white-lighter;
+      color: $black;
+    }
+  }
+  .pi {
+    color: $white;
+    font-size: 2rem;
+    margin: unset;
+  }
+}

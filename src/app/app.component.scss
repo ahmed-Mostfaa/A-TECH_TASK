@@ -1,0 +1,11 @@
+.container {
+  margin-top: 6rem;
+  margin-inline-start: 13.6rem;
+  margin-inline-end: 3.3rem;
+  @media screen and (max-width: 1120px) {
+    margin: 1rem;
+    .screen {
+      flex-direction: column;
+    }
+  }
+}

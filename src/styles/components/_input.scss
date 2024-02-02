@@ -1,0 +1,8 @@
+@use "base" as *;
+.p-inputswitch {
+  &.p-inputswitch-checked {
+    .p-inputswitch-slider {
+      background: $voilet-100;
+    }
+  }
+}

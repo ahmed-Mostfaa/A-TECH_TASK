@@ -1,0 +1,112 @@
+@use "base" as *;
+p-table {
+  .p-datatable {
+    .p-sortable-column:focus {
+      box-shadow: unset;
+      outline: unset;
+    }
+    .p-datatable-table {
+      padding: 0.5rem;
+      background-color: $white;
+    }
+    .p-datatable-thead {
+      & > tr > th {
+        div {
+          html[lang="en"] & {
+            rotate: 180deg;
+          }
+        }
+        background-color: $white-light;
+        color: $gray-light !important;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 400;
+        &:first-child {
+          border-bottom-right-radius: 6px;
+          border-top-right-radius: 6px;
+          html[lang="en"] & {
+            rotate: 180deg;
+          }
+        }
+        &:last-child {
+          border-bottom-left-radius: 6px;
+          border-top-left-radius: 6px;
+          html[lang="en"] & {
+            rotate: 180deg;
+          }
+        }
+      }
+    }
+    .p-datatable-tbody {
+      & > tr {
+        color: $black !important;
+        font-weight: bold !important;
+        td {
+          font-weight: 400;
+          text-align: center;
+          padding: 0.2rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .p-datatable-header {
+      padding: 0.3rem;
+      font-size: 1.4rem;
+      border: unset;
+      background: transparent;
+      @media screen and (max-width: 769px) {
+        & {
+          display: none;
+        }
+      }
+    }
+    .p-paginator {
+      .p-paginator-first,
+      .p-paginator-last {
+        display: none;
+      }
+      .p-disabled {
+        color: #d8d8e5;
+      }
+      .p-paginator-current {
+        order: 1;
+        margin-inline-end: auto;
+        color: $black;
+        @media screen and (max-width: 321px) {
+          margin-inline-start: auto;
+        }
+      }
+      .p-paginator-pages {
+        order: 2;
+        .p-paginator-page {
+          border-radius: 0.5rem;
+          &.p-highlight {
+            background: $voilet-100;
+            border-color: $voilet-100;
+            color: $white;
+          }
+        }
+      }
+      .p-paginator-next,
+      .p-paginator-prev {
+        & {
+          order: 2;
+        }
+        html[lang="ar"] & {
+          rotate: 180deg;
+        }
+      }
+      p-dropdown {
+        order: 0;
+        .p-dropdown {
+          html[lang="ar"] & {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+    .p-selectable-row {
+      cursor: unset;
+    }
+  }
+}

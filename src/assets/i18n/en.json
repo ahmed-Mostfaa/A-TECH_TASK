@@ -1,0 +1,53 @@
+{
+  "language": "عربي",
+  "dir": "left",
+  "ticketsTable": {
+    "tableInfo": {
+      "paginateMessage": "Showning {{rowsNumber}} from {{totalRecords}}"
+    },
+    "caption": {
+      "purchase": "Ticket sales",
+      "search": "Search for...",
+      "reserve": "Book a new ticket",
+      "active": "Activated"
+    },
+    "header": {
+      "user": "User",
+      "ticketNo": "Ticket Number",
+      "ticketPrice": "Ticket Price",
+      "cinema": "Cinema Location",
+      "peopleNo": "People Number",
+      "purchaseNo": "Purchase Number",
+      "ticket": "Ticket"
+    }
+  },
+  "chart": {
+    "title": "Coupon usage statistics",
+    "yearly": "Yearly",
+    "subtitle": "05 Jun , 2023 - 05 August , 2023",
+    "xaxis": [
+      "Dec",
+      "Nov",
+      "Oct",
+      "Sep",
+      "Aug",
+      "Jul",
+      "Jun",
+      "May",
+      "Apr",
+      "Mar",
+      "Feb",
+      "Jan"
+    ],
+    "tooltipTitle": "User"
+  },
+  "header": { "title": "Ticket #2342" },
+  "card": {
+    "title": "View the movie ticket",
+    "sale": "Sale",
+    "share": "Share",
+    "delete": "delete",
+    "date": "Effective until July 15, 2023",
+    "clipboard": "Copy to Clipboard"
+  }
+}

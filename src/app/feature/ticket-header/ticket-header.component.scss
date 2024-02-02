@@ -1,0 +1,11 @@
+@use "base" as *;
+.arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: $white-light;
+  color: $voilet-100;
+  &:hover {
+    background-color: $gray-light;
+  }
+}

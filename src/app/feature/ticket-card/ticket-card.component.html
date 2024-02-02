@@ -1,0 +1,48 @@
+<p-toast></p-toast>
+<section class="card text-center p-5">
+  <div class="flex justify-between mb-2">
+    <div class="empty"></div>
+    <p class="fw-medium fs-7">{{ "card.title" | translate }}</p>
+    <i
+      class="pi pi-trash fs-11"
+      pTooltip="{{ 'card.delete' | translate }}"
+      tooltipPosition="bottom"
+    ></i>
+  </div>
+  <div class="copy p-3 mb-2 flex justify-center mx-auto">
+    <p class="text-black fs-6 mx-5 fw-medium" #p>www.tazkty.com/473847</p>
+    <i
+      class="pi pi-copy fs-7 text-primary cursor-pointer"
+      (click)="copy(p.innerHTML)"
+    ></i>
+  </div>
+  <p class="fs-6">{{ "card.date" | translate }}</p>
+  <div class="flex relative separator">
+    <div class="circle circle-start"></div>
+    <div class="line grow-1"></div>
+    <div class="circle circle-end"></div>
+  </div>
+  <div class="flex justify-between items-center mt-6 p-2">
+    <div class="text-start fs-7">
+      <p class="mb-2">{{ "card.sale" | translate }}</p>
+      <div class="flex col-gap-2 items-center">
+        <p>25%</p>
+        <button
+          class="share-btn"
+          pButton
+          label="{{ 'card.share' | translate }}"
+          icon="pi pi-telegram"
+        ></button>
+      </div>
+    </div>
+    <div class="qr-code">
+      <qrcode
+        [qrdata]="'Your data string'"
+        [width]="82"
+        [errorCorrectionLevel]="'M'"
+        cssClass="qr-code"
+        [margin]="1"
+      ></qrcode>
+    </div>
+  </div>
+</section>

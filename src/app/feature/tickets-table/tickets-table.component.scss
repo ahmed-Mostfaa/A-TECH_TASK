@@ -1,0 +1,47 @@
+@use "base" as *;
+.caption-icon {
+  width: 36px;
+  height: 36px;
+  background-color: $white;
+  border: 1px solid $white-light;
+  border-radius: 8px;
+  &:hover {
+    background-color: $gray-light;
+    color: $white;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+}
+.user-profile {
+  figure {
+    margin: 0;
+    padding: 0;
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+.ticket-info {
+  .bag-icon {
+    width: 31px;
+    height: 31px;
+    border-radius: 8px;
+    background-color: $voilet-26;
+    color: $voilet-100;
+  }
+  .download-icon {
+    color: $voilet-100;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid $voilet-100;
+  }
+}
+
+.small-p {
+  color: $gray;
+  margin: 0.6rem 0;
+}
